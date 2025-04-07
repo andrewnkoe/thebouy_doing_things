@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+         body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+
+        }
+        #intro-video-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            z-index: -1; 
+        }
+        .content {
+            position: relative;
+            color: white;
+            z-index:-1;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: Arial, sans-serif;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00FFFF;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .hero-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .content-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+
+
+        @media (max-width: 480px)
+         {
+            nav {
+                position: fixed;
+                display: block;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+
+            }
+            .menu-item{
+                display: block;
+            }
+            body{ 
+                font-size: 12px ;
+                
+            }
+            .container{
+                width: 100%;
+            }
+            .item{
+                flex: 1 1 100%;
+            }
+
+            
+            
+        }
+        
+        
+        .gallery img {
+            width: 200px; 
+            margin: 10px; 
+        }
+    </style>
+    
+</head>
+    
+<body>
+    <div id="intro-video-container">
+        <video id="intro-video" autoplay muted>
+            <source src="c:\Users\atlan\OneDrive\Documents\PORTOFILIO\earth video.mp4" type="video/mp4">
+            <source src="introduction.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <script>
+        const video = document.getElementById("intro-video");
+        const videoContainer = document.getElementById("intro-video-container");
+        const mainContent = document.getElementById("main-content");
+
+    
+        video.onended = () => {
+            videoContainer.style.display = "none";
+            mainContent.style.display = "block";
+        };
+    </script>
+    
+
+    <!--Video element-->
+    <video autoplay muted loop class="video-background">
+        <source src="c:\Users\atlan\OneDrive\Documents\PORTOFILIO\Movie.mp4" type="video/mp4">
+    </video>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero-section">
+            <div class="gallery">
+
+            <img src="c:\Users\atlan\Downloads\pexels-pixabay-87651.jpg" alt="Tourism Attraction" />
+        </div>
+            <h2>CURRENT_COURSE</h2>
+        </section>
+
+        <section class="content-section">
+            <h2>Me!</h2>
+            <p>Hi my name is Lesole,i have a nice personality and am very easy to get along with.This is my first semester of university Like a lot of other people,what i like to to do in my spare time is to play video games and just relax with family.</p>
+            <p>Check out my best latest article on <a href="https://en.wikipedia.org/wiki/The_Subtle_Art_of_Not_Giving_a_Fuck" style="color: #0066cc;">The_Subtle_Art_of_Not_Giving_a_F**k</a> to learn more about current trends.</p>
+            
+        </section>
+    </main>
+
+    <footer>
+        
+        <p>&copy; 2025 My Website. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
